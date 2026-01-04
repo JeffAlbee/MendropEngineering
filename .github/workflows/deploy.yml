@@ -1,0 +1,35 @@
+name: Deploy MendropReportGenerator Function App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️ Check out repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2️ Setup .NET 8 SDK
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      # 3️ Restore and publish the Functions project
+      - name: Build and publish Function App
+        run: |
+          dotnet restore ./ReportGenerator.Functions/ReportGenerator.Functions.csproj
+          dotnet publish ./ReportGenerator.Functions/ReportGenerator.Functions.csproj -c Release -o ./publish_output
+
+      # 4️ Deploy to Azure Function App
+      - name: 'Run Azure Functions Action'
+        uses: Azure/functions-action@v1
+        with:
+          app-name: MendropReportGenerator
+          package: ./publish_output
+          publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}

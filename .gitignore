@@ -1,0 +1,80 @@
+# ---- Core Visual Studio / .NET ----
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ---- Azure Functions ----
+local.settings.json
+.vscode/
+.azurite/
+host.json.local
+secrets/
+
+# ---- Azure Pipelines / Deployment ----
+.publish/
+*.azurePubxml
+*.PublishSettings
+*.pubxml
+*.pubxml.user
+*.azureFunctions
+*.deployment
+
+# ---- Build / Package Artifacts ----
+project.lock.json
+project.fragment.lock.json
+artifacts/
+*.nupkg
+*.snupkg
+*.stackdump
+*.pidb
+*.svclog
+*.vshost.*
+TestResult*/
+*.TestResults.xml
+*.coverage
+*.coveragexml
+
+# ---- User-Specific / IDE Metadata ----
+*.dbmdl
+*.bak
+*.log
+*.tlog
+*.vspscc
+*.vssscc
+.vs/
+.vscode/
+.idea/
+
+# ---- Rider / JetBrains ----
+.idea/
+*.sln.iml
+
+# ---- OS / Misc ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Environment / Configuration ----
+.env
+*.env.local
+*.env.development
+*.env.production
+secrets.json
+appsettings.Development.json
+
+# ---- Tooling / Container ----
+*.dockerignore
+Dockerfile.local
+docker-compose.override.yml
+docker-compose.vs.debug.yml
+docker-compose.vs.release.yml
+
+# ---- Azure Function Build Outputs ----
+bin/Release/net8.0/
+bin/Debug/net8.0/
+obj/Release/net8.0/
+obj/Debug/net8.0/
+isolation/

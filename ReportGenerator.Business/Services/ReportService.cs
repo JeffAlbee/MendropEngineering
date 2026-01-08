@@ -467,7 +467,7 @@ namespace ReportGenerator.Business.Services
             AlternativeOptionBase? alt,
             BridgeCharacteristics? bc)
         {
-            if (alt == null || string.IsNullOrWhiteSpace(alt.StructureType))
+            if (alt == null || string.IsNullOrWhiteSpace(alt.StructureType) || bc == null)
                 return new List<string>();
 
             var bullets = new List<string>();

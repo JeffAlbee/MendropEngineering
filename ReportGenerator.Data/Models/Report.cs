@@ -19,14 +19,14 @@
         public string? PreparedForTitle { get; set; }
         public string? PreparedForOrganization { get; set; }
         public string? PreparedForAddressLine1 { get; set; }
-        public string? PreparedForAddressLine2 { get; set; }
+        //public string? PreparedForAddressLine2 { get; set; }
         public string? PreparedForCity { get; set; }
         public string? PreparedForState { get; set; }
         public string? PreparedForZip { get; set; }
 
         // Prepared By
         public string? PreparedByAddressLine1 { get; set; }
-        public string? PreparedByAddressLine2 { get; set; }
+        //public string? PreparedByAddressLine2 { get; set; }
         public string? PreparedByCity { get; set; }
         public string? PreparedByState { get; set; }
         public string? PreparedByZip { get; set; }
